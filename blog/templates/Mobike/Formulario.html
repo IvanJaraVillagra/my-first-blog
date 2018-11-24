@@ -18,7 +18,9 @@
 						<li class="menu__item"><a class="menu__link" href="{% url 'index' %}"> Inicio</a></li>
 						<li class="menu__item"><a class="menu__link" href="{% url 'login' %}"> Login</a></li>
 						<li class="menu__item"><a class="menu__link" href=""> Que Somos</a></li>
-						<li class="menu__item"><a class="menu__link select" href="{% url 'formulario' %}"> *Registro Usuario</a></li>
+						<li class="menu__item"><a class="menu__link select" href="{% url 'formulario' %}"> Registro Usuario</a></li>
+						<li class="menu__item"><a class="menu__link" href="{% url 'arrendarMapa' %}"> Arrendar</a></li>
+						<li class="menu__item"><a class="menu__link" href="{% url 'formuMantenimiento' %}"> Mantencion</a></li>
 					</ul>
 			</nav>
 		</div>
@@ -45,9 +47,21 @@
 				<input type="text" name="Usuario" placeholder="Usuario Para Logearse">
 				<input type="password" name="Contraseña" placeholder="Contraseña">
 				<input type="email" name="Correo" placeholder="Correo">
+				<input type="text" name="UbiTrabajo" placeholder="Direccion trabajo">
+				<input type="number" name="NumBanco" placeholder="Numero de trajeta bancaria">
+				<input type="text" name="TipoBanco" placeholder="Tipo Banco">
 				<input type="submit" name="" value="Registrar">
 			</form>
 		</div>
+	<footer class="footer">
+		<div class="social">
+			<a href="" class="icon-facebook"></a>
+			<a href="" class="icon-twitter"></a>
+			<a href="" class="icon-gplus"></a>
+			<a href="" class="icon-instagram"></a>
+		</div>
+		<p class="copy">&copy; Ivan Jara y Alex Sanchez</p>
+	</footer>
 	<script src="{% static 'js/menu.js'%}"></script>
 </body>
 </html>

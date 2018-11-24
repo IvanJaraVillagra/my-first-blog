@@ -3,9 +3,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Login Mobike</title>
+	<title>Mantencion Mobike</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/estiloLogin.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/css.css' %}">
 	<link href="https://file.myfontastic.com/G2UB8YrHPjmKdP9QY4RZ5K/icons.css" rel="stylesheet">
 </head>
 <body>
@@ -16,11 +16,11 @@
 			<nav class="nav" id="nav">
 				<ul class="menu">
 						<li class="menu__item"><a class="menu__link" href="{% url 'index' %}"> Inicio</a></li>
-						<li class="menu__item"><a class="menu__link select" href="{% url 'login' %}"> Login</a></li>
+						<li class="menu__item"><a class="menu__link" href="{% url 'login' %}"> Login</a></li>
 						<li class="menu__item"><a class="menu__link" href=""> Que Somos</a></li>
 						<li class="menu__item"><a class="menu__link" href="{% url 'formulario' %}"> Registro Usuario</a></li>
 						<li class="menu__item"><a class="menu__link" href="{% url 'arrendarMapa' %}"> Arrendar</a></li>
-						<li class="menu__item"><a class="menu__link" href="{% url 'formuMantenimiento' %}"> Mantencion</a></li>
+						<li class="menu__item"><a class="menu__link select" href="{% url 'formuMantenimiento' %}"> Mantencion</a></li>
 					</ul>
 			</nav>
 		</div>
@@ -32,16 +32,31 @@
 			<p class="banner__txt">Unetenemos y ayuda al medio ambiente</p>
 		</div>
 	</div>
-	<div class="main">
-				<form action="" >
-					<h2>Login</h2>
-					<input type="text" placeholder="&#128272; Usuario" name="usuario">
-					<input type="password" placeholder="&#128272; Contrasena" name="contraseña">
-					<input type="submit" name="" value="Ingresar">
-				</form>
+	<div class="Mantencion">
+		<form action="" name="formulario_registro" id="formulario_registro" method="POST" >{%csrf_token%}
+			<h2> Registrar Mantencion </h2>
+			<input type="text" name="codigo" id="codigo"
+			placeholder="Codigo">
+			<input type="date" name="Fecha"
+			placeholder="Fecha">
+			<input type="text" name="CodBici" placeholder="Codigo Bicicleta">
+			<textarea name="Descripcion" placeholder="Escriba la descripcion del problema, materiales usados."></textarea>
+			<input type="submit" name="" value="Registrar">
+		</form>
 	</div>
-
-	
+	<script >
+		document.formulario_registro.codigo.value = '_' + Math.random().toString(36).substr(2, 9);
+	</script>
+	<footer class="footer">
+		<div class="social">
+			<a href="" class="icon-facebook"></a>
+			<a href="" class="icon-twitter"></a>
+			<a href="" class="icon-gplus"></a>
+			<a href="" class="icon-instagram"></a>
+		</div>
+		<p class="copy">&copy; Ivan Jara y Alex Sanchez</p>
+	</footer>
 	<script src="{% static 'js/menu.js'%}"></script>
+
 </body>
 </html>

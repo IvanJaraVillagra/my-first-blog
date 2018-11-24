@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Mantencion Mobike</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/cssMapa.css' %}">
+  <link href="https://file.myfontastic.com/G2UB8YrHPjmKdP9QY4RZ5K/icons.css" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="contenedor">
+      <h1 class="logo">Mobike</h1>
+      <span class="icon-menu" id="btn-menu"></span>
+      <nav class="nav" id="nav">
+        <ul class="menu">
+            <li class="menu__item"><a class="menu__link" href="{% url 'index' %}"> Inicio</a></li>
+      </nav>
+    </div>
+  </header>
+  <div class="banner">
+    <img src="{% static 'Imagenes/Imagen3.jpg' %}" alt="" class="banner__img">
+    <div class="contenedor2">
+      <h2 class="banner__titulo">El mejor medio de trasporte</h2>
+      <p class="banner__txt">Unetenemos y ayuda al medio ambiente</p>
+    </div>
+  </div>
+    <div id="map"></div>
+    <script>
+function initMap() {
+  var uluru = {lat: -33.442458, lng: -70.556125};
+  var uluru2 = {lat: -33.440250, lng: -70.555912};
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 17, center: uluru});
+  var marker = new google.maps.Marker({position: uluru, map: map});
+  var marker = new google.maps.Marker({
+    position: uluru2, map: map, title: 'Mobike'
+  });
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Mobike</h1>'+
+      '<div id="bodyContent">'+
+      '<p></p>'+
+      '<p>Arriendo Aqui <a href="{% url 'arrendar' %}">'+
+      'Estacionamiento.com</a> '+
+      '(En este estacionamiento hay 2 bicicletas.).</p>'+
+      '</div>'+
+      '</div>';
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDenmOF0dEPaqypLIacc-re2U_uAIYABQQ&callback=initMap">
+    </script>
+    <footer class="footer">
+    <div class="social">
+      <a href="" class="icon-facebook"></a>
+      <a href="" class="icon-twitter"></a>
+      <a href="" class="icon-gplus"></a>
+      <a href="" class="icon-instagram"></a>
+    </div>
+    <p class="copy">&copy; Ivan Jara y Alex Sanchez</p>
+  </footer>
+    <script src="{% static 'js/menu.js'%}"></script>
+  </body>
+</html>
