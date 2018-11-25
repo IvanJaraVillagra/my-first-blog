@@ -34,3 +34,5 @@ class Tarjeta(models.Model):
 
 	def __str__(self):
 		return self.TarjetaPrepa
+
+		

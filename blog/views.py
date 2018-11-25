@@ -5,6 +5,7 @@ from django.utils import timezone
 from .models import Post
 from .models import Mantencion
 from .models import Tarjeta
+from django.http import HttpResponseRedirect
 
 
 def index(request):
@@ -62,5 +63,12 @@ def arrendarPosito(request):
     if request.method == "POST":
         form.TarjetaPrepa = request.POST['codigo']
         form.save()
+        return render(request, 'Mobike/TerminarArriendo.html')
         
     return render(request, 'Mobike/arriendopositivo.html')
+
+def terminarArriendo (request):
+    return render(request, 'Mobike/TerminarArriendo.html')
+
+def graciasportodo (request):
+    return render(request, 'Mobike/GraciasPorTodo.html')

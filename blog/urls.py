@@ -4,8 +4,10 @@ urlpatterns = [
     url(r'^formulario/',views.formulario, name='formulario'),
     url(r'^login/',views.login, name='login'),
     url(r'^$',views.index, name='index'),
-    url(r'^Mantenimiento/',views.formuMantenimiento, name='formuMantenimiento'),
+    url(r'^mantenimiento/',views.formuMantenimiento, name='formuMantenimiento'),
     url(r'^arrendarMapa/',views.arrendarMapa, name='arrendarMapa'),
     url(r'^arrendar/',views.arrendar, name='arrendar'),
-    url(r'^arrendarPositivo/',views.arrendarPosito, name='arrendarPosito'),
+    url(r'^arrendaar/',views.arrendarPosito, name='arrendarPosito'),
+    url(r'^terminar/',views.terminarArriendo, name='terminarArriendo'),
+    url(r'^agradecimientos/',views.graciasportodo, name='graciasportodo'),
 ]

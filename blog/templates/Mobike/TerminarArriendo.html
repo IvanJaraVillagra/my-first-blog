@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Arriendo Mobike</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/arriendos.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/cssTerminarArriendo.css' %}">
   <link href="https://file.myfontastic.com/G2UB8YrHPjmKdP9QY4RZ5K/icons.css" rel="stylesheet">
 </head>
 <body>
@@ -15,7 +15,7 @@
       <span class="icon-menu" id="btn-menu"></span>
       <nav class="nav" id="nav">
         <ul class="menu">
-            <li class="menu__item"><a class="menu__link" href="{% url 'index' %}"> Inicio</a></li>
+            <li class="menu__item"><a class="menu__link select" href="{% url 'index' %}"> Inicio</a></li>
           </ul>
       </nav>
     </div>
@@ -25,17 +25,11 @@
     <div class="contenedor2">
       <h2 class="banner__titulo">El mejor medio de trasporte</h2>
       <p class="banner__txt">Unetenemos y ayuda al medio ambiente</p>
-    </div>
+    </div>  
   </div>
-  <div class="Mantencion">
-    <form action="" name="formulario" id="formulario" method="POST">{%csrf_token%}
-      <h2> Arrendar </h2>
-      <input type="text" name="codigo" id="codigo"
-      placeholder="Introduzca el codigo de la tarjeta">
-      <input type="submit" name="" value="Registrar" >
-      <h3>Gracias por el arriendo</h3>
-    </form>
-    <img src="{% static 'Imagenes/Imagen5.jpg' %}" class="fotito">
+  <div class="contenedorpulento">
+  <a class="link__arriendo" href="{% url 'graciasportodo' %}"><input type="button" value="Terminar Arriendo" class="link__arriendo_boton"  ></a>
+  <p class="texto">Para terminar el arriendo, haga click en el boton de arriba "Terminar Arriendo"</p>
   </div>
   <footer class="footer">
     <div class="social">
